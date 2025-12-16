@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anemia Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        form { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 15px; }
+        input[type="number"] { width: 100%; padding: 10px; margin-top: 5px; }
+        input[type="submit"] { margin-top: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        .note { font-size: 0.9em; color: #555; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Anemia Disease Predictor</h2>
+    <form action="/predict" method="post">
+        <label for="Gender">Gender (0 for Female, 1 for Male):</label>
+        <input type="number" name="Gender" min="0" max="1" required>
+        <span class="note">Enter 0 for Female, 1 for Male</span>
+
+        <label for="Hemoglobin">Hemoglobin (Range: 7 - 16):</label>
+        <input type="number" step="any" name="Hemoglobin" min="7" max="16" required>
+
+        <label for="MCH">Mean Corpuscular Hemoglobin (Range: 16 - 100):</label>
+        <input type="number" step="any" name="MCH" min="16" max="100" required>
+
+        <label for="MCHC">Mean Corpuscular Hemoglobin Concentration (Range: 28 - 34):</label>
+        <input type="number" step="any" name="MCHC" min="28" max="34" required>
+
+        <label for="MCV">Mean Corpuscular Volume (Range: 70 - 100):</label>
+        <input type="number" step="any" name="MCV" min="70" max="100" required>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
